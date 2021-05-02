@@ -7,7 +7,7 @@ def cantidades():
     """
         Calcula la cantidad de llamados y casos descartados
     """
-    with open('resultados.txt') as file:
+    with open('resultados.json') as file:
         data = json.load(file)
         cant = []
         for elem in data:

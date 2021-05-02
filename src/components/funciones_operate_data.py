@@ -42,7 +42,7 @@ def operateData1():
     """
         Proceso la información del DATASET1
     """
-    archivo2 = open("resultados.txt","w")
+    archivo2 = open("resultados.json","w")
     cant_call = count_calls()
     cant_desc = count_descs()
 
@@ -90,7 +90,7 @@ def operateData2():
     """
         Proceso la información del DATASET2
     """
-    archivo2 = open('resultados2.txt', 'w')
+    archivo2 = open('resultados2.json', 'w')
     cant = [0,0,0,0,0,0,0,0,0,0]
     nom_peces = ['Abadejo','Cangrejo','Caracol','Caballa','Palometa','Langostino','Besugo','Bagre','Mero','Gatuzo']
     datos = sum_fish(cant,nom_peces,archivo2)

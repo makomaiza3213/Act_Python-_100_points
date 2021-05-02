@@ -24,7 +24,6 @@ def loop():
             window.BringToFront() #incluso lo vio el profe, como ultima solucion implementamos esta instruccion para que la ventana no se oculte
         if(event == '-EXIT-'):
             sg.popup("aplicación finalizada")
-            #ok = False
             break
     return window
 

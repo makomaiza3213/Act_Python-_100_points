@@ -19,7 +19,7 @@ def llamados():
     """
     layout = [[sg.Button('TOTAL DE LLAMADOS',key = '-LLAMADOS-')],
               [sg.Button('CASOS DESCARTADOS',key = '-DESCARTADOS-')],
-              [sg.Button('BACK', key = '-BACK-')]]
+              [sg.Button('volver', key = '-BACK-')]]
 
     window = sg.Window('Datos oficiales 2020 - 2021', layout, no_titlebar = True)
     return window
@@ -28,8 +28,8 @@ def peces():
     """
         Construye la ventana del menu de opciones a procesar, peces
     """
-    layout = [[sg.Button('MÁS PESCADO', key = '-MAS-')],
-              [sg.Button('MENOS PESCADO', key = '-MENOS-')],
-              [sg.Button('Back', key = '-BACK-')]]
+    layout = [[sg.Button('TOP 10 MÁS PESCADO', key = '-MAS-')],
+              [sg.Button('TOP 10 MENOS PESCADO', key = '-MENOS-')],
+              [sg.Button('volver', key = '-BACK-')]]
     window = sg.Window('Peces',layout, no_titlebar = True)
     return window

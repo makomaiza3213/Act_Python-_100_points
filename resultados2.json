@@ -1,36 +1,83 @@
 [
-    {
-        "Abadejo": 6266219
-    },
-    {
-        "Cangrejo": 792447
-    },
-    {
-        "Caracol": 1152885
-    },
-    {
-        "Caballa": 3753675
-    },
-    {
-        "Palometa": 7664542
-    },
-    {
-        "Langostino": 52310821
-    },
-    {
-        "Besugo": 24088628
-    },
-    {
-        "Bagre": 3431840
-    },
-    {
-        "Mero": 37331796
-    },
-    {
-        "Gatuzo": 25530239
-    },
-    {
-        "EL MAS PESCADO": "Langostino",
-        "EL MENOS PESCADO": "Cangrejo"
-    }
+    [
+        "Merluza hubbsi",
+        55321883
+    ],
+    [
+        "Langostino",
+        52310821
+    ],
+    [
+        "Mero",
+        37331796
+    ],
+    [
+        "Calamar Illex",
+        36273983
+    ],
+    [
+        "Anchoa de banco",
+        31722501
+    ],
+    [
+        "Pez \u00e1ngel",
+        25981344
+    ],
+    [
+        "Papafigo",
+        25789800
+    ],
+    [
+        "Gatuzo",
+        25530239
+    ],
+    [
+        "Rayas nep",
+        24138512
+    ],
+    [
+        "Besugo",
+        24088628
+    ]
+][
+    [
+        "Calamar patag\u00f3nico",
+        31
+    ],
+    [
+        "Tibur\u00f3n bacota",
+        87
+    ],
+    [
+        "Tibur\u00f3n escalandr\u00fan",
+        100
+    ],
+    [
+        "Tibur\u00f3n martillo",
+        100
+    ],
+    [
+        "Tibur\u00f3n azul",
+        111
+    ],
+    [
+        "Cabrilla",
+        1650
+    ],
+    [
+        "Congrio de profundidad",
+        1838
+    ],
+    [
+        "Otras especies de crust\u00e1c",
+        2786
+    ],
+    [
+        "Raya pintada",
+        6475
+    ],
+    [
+        "Polaca",
+        13876
+    ]
 ]

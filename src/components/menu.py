@@ -19,8 +19,8 @@ def loop():
             casos.start()
             window.BringToFront() #por algun motivo cuando ejecutaba el run.py,se ocultaba la ventana del menu y el codigo estaba todo perfecto,
         if(event == '-DATASET2-'):
-            op.operateData2()
-            peces.start()
+            tops = op.operateData2()
+            peces.start(tops)
             window.BringToFront() #incluso lo vio el profe, como ultima solucion implementamos esta instruccion para que la ventana no se oculte
         if(event == '-EXIT-'):
             sg.popup("aplicación finalizada")

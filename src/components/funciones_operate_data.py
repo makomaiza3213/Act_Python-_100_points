@@ -3,6 +3,7 @@ from src.windows import menu_windows
 from src.components import menu
 import csv
 import json
+import operator
 
 def mostrar_en_csv(ruta):
     """
@@ -52,48 +53,49 @@ def operateData1():
     #mostrar_en_csv('resultados.txt')
     return [cant_call,cant_desc]
 
-def sum_fish(cant,nom_peces,archivo2):
+def max_sort(peces):
     """
-        procesa el csv de peces y retorna una list de dict con la cantidad pescada de cada pez
+        calcula y retorna la lista con los nombres de los peces mas pescados
     """
-    archivo = open('captura-puerto-flota-2019.csv')
-    csvreader = csv.reader(archivo, delimiter = ',')
-    encabezado = next(csvreader)
-    datos = []
+    archivo2 = open("resultados2.json","a+")
+    items = peces.items()
+    peces_max = sorted(peces.items(), key=operator.itemgetter(1), reverse=True)
+    maximos = []
+    for i in range(0,10):
+        maximos.append(peces_max[i])
+    json.dump(maximos, archivo2, indent = 4)
+    nom_max = [pez[0] for pez in maximos]
+    return nom_max
 
-    for linea in csvreader:
-        if(linea[10] == nom_peces[0]):
-            cant[0] += int(linea[12])
-        elif(linea[10] == nom_peces[1]):
-            cant[1] += int(linea[12])
-        elif(linea[10] == nom_peces[2]):
-            cant[2] += int(linea[12])
-        elif(linea[10] == nom_peces[3]):
-            cant[3] += int(linea[12])
-        elif(linea[10] == nom_peces[4]):
-            cant[4] += int(linea[12])
-        elif(linea[10] == nom_peces[5]):
-            cant[5] += int(linea[12])
-        elif(linea[10] == nom_peces[6]):
-            cant[6] += int(linea[12])
-        elif(linea[10] == nom_peces[7]):
-            cant[7] += int(linea[12])
-        elif(linea[10] == nom_peces[8]):
-            cant[8] += int(linea[12])
-        elif(linea[10] == nom_peces[9]):
-            cant[9] += int(linea[12])
-    datos = [{nom_peces[i]:cant[i]} for i in range(0,len(nom_peces))]
-    json.dump(datos, archivo2, indent = 4)
-    return datos
+def min_sort(peces):
+    """
+        calcula y retorna la lista con los nombres de los peces menos pescados
+    """
+    archivo2 = open("resultados2.json","a+")
+    items = peces.items()
+    minimos = []
+    peces_min = sorted(peces.items(),key = operator.itemgetter(1))
+    for i in range(0,10):
+        minimos.append(peces_min[i])
+    json.dump(minimos, archivo2, indent = 4)
+    nom_min = [pez[0] for pez in minimos]
+    return nom_min
 
 def operateData2():
     """
         Proceso la información del DATASET2
     """
-    archivo2 = open('resultados2.json', 'w')
-    cant = [0,0,0,0,0,0,0,0,0,0]
-    nom_peces = ['Abadejo','Cangrejo','Caracol','Caballa','Palometa','Langostino','Besugo','Bagre','Mero','Gatuzo']
-    datos = sum_fish(cant,nom_peces,archivo2)
-    archivo2.close()
-    #mostrar_en_csv('resultados2.txt')
-    return datos
+    archivo = open('captura-puerto-flota-2019.csv')
+    csvreader = csv.reader(archivo, delimiter = ',')
+    encabezado = next(csvreader)
+
+    peces = {}
+    for linea in csvreader:
+        if linea[10] in peces:
+            peces[linea[10]] += int(linea[12])
+        else:
+            peces[linea[10]] = int(linea[12])
+    #items = peces.items()
+    max = max_sort(peces)
+    min = min_sort(peces)
+    return [max,min]

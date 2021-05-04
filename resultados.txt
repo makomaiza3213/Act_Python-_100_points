@@ -1,7 +1,0 @@
-[
-    {
-        "FECHA": "2020-2021",
-        "LLAMADOS": 186692,
-        "CASOS DESCARTADOS": 166904
-    }
-]
